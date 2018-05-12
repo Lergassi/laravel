@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+$middleware = [];
+
+if (Config::get('app.debug')) {
+    $middleware[] = "clearcache";
+}
